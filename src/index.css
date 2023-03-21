@@ -10,24 +10,39 @@ body {
     border: 2px solid gray;
     width: 35rem;
     height: 22rem;
-    display:flex;
-    justify-content: left;
     align-items: center;
     border-radius: 4px;
 }
 
+ #description {
+     width: 7rem;
+     height: 2.2rem;
+     border: 1px solid black;
+     text-align: center;
+     border-radius: 2px;
+     font-size: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     left: 23rem;
+     margin-top: 7.2rem;
+     margin-right: 0px;
+     top: .7rem;
+ }
 
 .display-container {
-    min-width: 45%;
+    max-width: 45%;
     min-height: 45%;
     display: grid;
     gap: .4rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     padding-left: 4rem;
-    padding-top: 3rem;
+    padding-right: none;
+    margin-top: -2.2rem;
+    margin-right: 0;
 }
-
 
  button {
     background-color: rgb(131, 185, 235);
