@@ -1,19 +1,55 @@
+//
+
 import './index.css';
+import { useEffect, useState } from 'react'
+import sounds from "./sounds"
 
 function App() {
-  let src1 = "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3";
-  let src2 = "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3";
-  let src3 = "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3";
-  let src4 = "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3";
-  let src5 = "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3";
-  let src6 = "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3";
-  let src7 = "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3";
-  let src8 = "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3";
-  let src9 = "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3";
 
-  const handleClick = (e) => {
+const { src1, src2, src3, src4, src5, src6, src7, src8, src9 } = sounds;
+
+  useEffect(() => {
+    document.addEventListener('keydown', getKeyDown)
+  },[]);
+
+const getKeyDown = (e) => {
+  if (e.key.toLowerCase() === "q") {
+      playKeyDown("Q")
+  }
+  console.log(e.key)
+  if (e.key.toLowerCase() === "w") {
+    playKeyDown("W")
+  }
+  if (e.key.toLowerCase() === "e") {
+    playKeyDown("E")
+  }
+  if (e.key.toLowerCase() === "a") {
+    playKeyDown("A")
+  }
+  if (e.key.toLowerCase() === "s") {
+    playKeyDown("S")
+  }
+  if (e.key.toLowerCase() === "d") {
+    playKeyDown("D")
+  }
+  if (e.key.toLowerCase() === "z") {
+    playKeyDown("Z")
+  }
+  if (e.key.toLowerCase() === "x") {
+    playKeyDown("X")
+  }
+  if (e.key.toLowerCase() === "c") {
+    playKeyDown("C")
+  }
+}
+
+const playKeyDown = (id) => {
+  document.getElementById(id).play()
+}
+
+const handleClick = (e) => {
   if (e.currentTarget.id === "heater1") {
-     document.getElementById("Q").play();
+     document.getElementById("Q").play(); 
    }
   if (e.currentTarget.id === "heater2") {
      document.getElementById("W").play();
@@ -40,21 +76,21 @@ function App() {
     document.getElementById("C").play();
   }
 }
-
   return (
-    <div className="App">
-      <div className='container' id='drum-machine'> 
-         <div id='display' className='display-container'>
-           <button className='drum-pad' id='heater1' value={src1} type="button" onClick={(event) => handleClick(event)}><audio src={src1} className="clip" id="Q"></audio>Q</button>
-           <button className='drum-pad' id='heater2' value={src2} type="button" onClick={handleClick}><audio src={src2} className="clip" id="W"></audio>W</button>
-           <button className="drum-pad" id='heater3' value={src3} type="button" onClick={handleClick}><audio src={src3} className="clip" id="E"></audio>E</button>
-           <button className='drum-pad' id='heater4' value={src4} type="button" onClick={handleClick}><audio src={src4} className="clip" id="A"></audio>A</button>
-           <button className='drum-pad' id='clap' value={src5} type="button"  onClick={handleClick}><audio src={src5} className="clip" id="S"></audio>S</button>
-           <button className='drum-pad' id='open-HH' value={src6} type="button" onClick={handleClick}><audio src={src6} className="clip" id="D"></audio>D</button>
-           <button className='drum-pad' id='kick-n-hat' value={src7} type="button" onClick={handleClick}><audio src={src7}className="clip" id="Z"></audio>Z</button>
-           <button className='drum-pad' id='kick' value={src8} type="button" onClick={handleClick}><audio src={src8} className="clip" id="X"></audio>X</button>
-           <button className='drum-pad' id='closed-HH' value={src9} type="button" onClick={handleClick}><audio src={src9} className="clip" id="C"></audio>C</button>
-         </div> 
+    <div className="App" id='drum-machine'>
+      <div className='container' id='display'> 
+         <p>Helloo</p>
+         <div className='display-container'>
+           <button className='drum-pad' id='heater1' type="button" onClick={handleClick}><audio src={src1} className="clip" id="Q"></audio>Q</button>
+           <button className='drum-pad' id='heater2' type="button" onClick={handleClick}><audio src={src2} className="clip" id="W"></audio>W</button>
+           <button className="drum-pad" id='heater3' type="button" onClick={handleClick}><audio src={src3} className="clip" id="E"></audio>E</button>
+           <button className='drum-pad' id='heater4' type="button" onClick={handleClick}><audio src={src4} className="clip" id="A"></audio>A</button>
+           <button className='drum-pad' id='clap' type="button"  onClick={handleClick}><audio src={src5} className="clip" id="S"></audio>S</button>
+           <button className='drum-pad' id='open-HH' type="button" onClick={handleClick}><audio src={src6} className="clip" id="D"></audio>D</button>
+           <button className='drum-pad' id='kick-n-hat' type="button" onClick={handleClick}><audio src={src7}className="clip" id="Z"></audio>Z</button>
+           <button className='drum-pad' id='kick' type="button" onClick={handleClick}><audio src={src8} className="clip" id="X"></audio>X</button>
+           <button className='drum-pad' id='closed-HH' type="button" onClick={handleClick}><audio src={src9} className="clip" id="C"></audio>C</button>
+         </div>
       </div> 
     </div>
   );
