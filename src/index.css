@@ -5,54 +5,57 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background: linear-gradient(to top, #2E3192, #1BFFFF);
+    background: #f58c53;
 }
 
 .container {
-    width: 50rem;
-    height: 30rem;
-    border-radius: 4px;
-    background: linear-gradient(to top, #2E3192, #1BFFFF);
+    width: 20rem;
+    height: 33rem;
+    background: #e7d0ba;
+    border: .8rem solid #f6dfc7;
+    outline: .8rem solid rgb(253, 240, 234);
 }
-
  #description {
      width: 9.5rem;
      height: 2.6rem;
-     border: 1px solid black;
      text-align: center;
-     border-radius: 2px;
-     font-size: 20px;
+     font-size: 35px;
+     font-family: "Print Clearly";
      display: flex;
      justify-content: center;
      align-items: center;
-     position: relative;
-     left: 35rem;
-     top: 6.8rem;
-     margin-top: 5rem;
-}
+     margin: auto;
+     padding-top: 3.5rem;
+ }
 
 .display-container {
-    max-width: 50%;
-    min-height: 65%;
+    width: 250px;
+    height: 250px;
+    border-right: none;
     display: grid;
-    gap: .4rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    padding-left: 4rem;
-    margin-top: 4rem;
+    padding-top: 4.75rem;
+    margin-left: 2.40rem;
 }
 
  button {
-    border-radius: 5%;
-    font-size: 26px;
+    width: 77px;
+    height: 77px;
+    font-size: 24px;
+    font-family: 'NeoSans';
     border: none;
-    color: black;
+    color: #ebdac5;
     outline: none;
-    background: #deb887f3;
+    background: #392c36;
+    padding: 0;
+    border-radius: 2px;
 }
 
  button:hover {
-    background-color: #1bffff44;
+    background-color: #688e83;
+    color: #f58c53;
+    box-shadow: 0px 0px 15px #f58c53;
     cursor: pointer;
 }
 
@@ -60,7 +63,66 @@ body {
     transform: scale(0.92);
 }
 
-input {
-    outline: none;
+#slide-containter {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 3.5rem;
 }
 
+#volume {
+    font-family: "Print Clearly";
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 16.1rem;
+    position: relative;
+    top: 2.5rem; 
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    width: 11rem;
+    outline: none;
+    position: relative;
+    top: .3rem; 
+}
+
+/* For Chrome, Safari */
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 0.35rem;
+    background: #392c36;
+    border-radius: 1.5px;
+    position: relative;
+    top: -.4rem
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #688e83;
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-top: -10px;
+    border-radius: 50%;
+    position: relative;
+  
+}
+
+/* For Firefox */
+
+input[type="range"]::-moz-range-track {
+    height: 0.35rem;
+    background: #392c36;
+    border-radius: 1.5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 50%;
+    background-color: #688e83;
+    width: 1.6rem;
+    height: 1.6rem;
+}
