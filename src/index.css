@@ -4,8 +4,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: auto;
     background: #f58c53;
+}
+
+#title {
+    padding-left: 3.2rem;
+    position: relative;
+    top: 2rem;
 }
 
 .container {
@@ -14,7 +20,9 @@ body {
     background: #e7d0ba;
     border: .8rem solid #f6dfc7;
     outline: .8rem solid rgb(253, 240, 234);
+
 }
+
  #description {
      width: 9.5rem;
      height: 2.6rem;
